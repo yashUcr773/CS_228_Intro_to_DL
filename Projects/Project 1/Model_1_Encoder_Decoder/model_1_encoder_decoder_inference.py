@@ -290,6 +290,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = ColorizationModel().to(device)
 model.load_state_dict(torch.load(f'colorization_model_encoder_decoder.pth'))
 
+# Batch Images Visualizing
 # Load the trained model
 model.eval()
 with torch.no_grad():
@@ -330,5 +331,47 @@ with torch.no_grad():
 
         # Display the figure
         plt.show()
-        break
 
+# # Single Image Testing
+# transform = torchvision.transforms.ToTensor()
+# model.eval()
+# with torch.no_grad():
+#     # Generate colorized images
+    
+#     image = transform(Image.open('./dataset/dataset/bw_images/100.jpg')).to(device)
+#     ground_truth = transform(Image.open('./dataset/dataset/true_images/100.jpg'))
+
+#     image = image.unsqueeze(0)
+#     colorized_image = model(image)
+#     colorized_image = colorized_image.to('cpu')
+#     image = image.to('cpu')
+#     ground_truth = ground_truth.to('cpu')
+
+#     # Load the images
+#     image1 = image[0]
+#     image2 = ground_truth.to('cpu')
+#     image3 = colorized_image[0]
+
+#     # Create a figure and axes
+#     fig, axes = plt.subplots(1, 3, figsize=(12, 4))
+
+#     # Plot the first image
+#     axes[0].imshow(image1.squeeze(0), cmap='gray')
+#     axes[0].axis('off')  # Turn off the axis labels
+#     axes[0].set_title('Black and White')
+
+#     # Plot the second image
+#     axes[1].imshow(image2.permute(1,2,0))
+#     axes[1].axis('off')  # Turn off the axis labels
+#     axes[1].set_title('Ground Truth')
+
+#     # Plot the third image
+#     axes[2].imshow(image3.permute(1,2,0))
+#     axes[2].axis('off')  # Turn off the axis labels
+#     axes[2].set_title('Generated colored')
+
+#     # Adjust the spacing between subplots
+#     plt.subplots_adjust(wspace=0.1)
+
+#     # Display the figure
+#     plt.show()

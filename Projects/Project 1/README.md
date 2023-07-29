@@ -6,7 +6,7 @@ This folder contains the implementation for the project Image Colorization for C
 
 - Run the `dataset_creation.py` to convert the downloaded images to dataset by resizing them to 512x512 pixels and converting the coloured images to black_and_white.
 - The images are stored in respective folders `black_and_white` and `true_labels`.
-- The dataset can be found at 'https://d1u36hdvoy9y69.cloudfront.net/cs-228-intro-to-dl/Project/dataset.zip'
+- The dataset can be found at [here](https://d1u36hdvoy9y69.cloudfront.net/cs-228-intro-to-dl/Project/dataset.zip)
 
 
 The folder Model_1_Encoder_Decoder contains the code to train the model, run inference on already trained model and a readme file with information.        

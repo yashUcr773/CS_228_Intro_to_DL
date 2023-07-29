@@ -9,5 +9,4 @@ This folder contains the implementation for the project Image Colorization for C
 - The dataset can be found at 'https://d1u36hdvoy9y69.cloudfront.net/cs-228-intro-to-dl/Project/dataset.zip'
 
 
-The 4 folders contain `individual models` and `readme` to run the files and generate results
-        
+The folder Model_1_Encoder_Decoder contains the code to train the model, run inference on already trained model and a readme file with information.        
